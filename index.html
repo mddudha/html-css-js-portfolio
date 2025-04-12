@@ -3,24 +3,55 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/lottie-web/5.12.0/lottie.min.js"></script>
     <title>Mirva Dudhagara</title>
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="mediaqueries.css">
 </head>
 <body>
     <nav id="desktop-nav">
-        <div class="logo">Mirva Dudhagara</div>
+        <!-- <div class="logo">mirva d.</div> -->
+        <div class="logo-wrapper">
+          <div id="lottie-desktop" class="logo-bg-animation"></div>
+          <div class="logo">mirva d.</div>
+        </div>        
+        </div>
         <div>
             <ul class="nav-links">
-                <li><a href="#about">About</a></li>
-                <li><a href="#experience">Experience</a></li>
-                <li><a href="#projects">Projects</a></li>
-                <li><a href="#contact">Contact</a></li>
+                <!-- <li><a href="#about">about</a></li>
+                <li><a href="#experience">experience</a></li>
+                <li><a href="#projects">projects</a></li>
+                <li><a href="#showcase">showcase</a></li>
+                <li><a href="#contact">contact</a></li> -->
+                <li class="nav-item-wrapper">
+                  <div class="sparkle-bg" data-index="about"></div>
+                  <a href="#about" class="nav-link">about</a>
+                </li>
+                <li class="nav-item-wrapper">
+                  <div class="sparkle-bg" data-index="experience"></div>
+                  <a href="#experience" class="nav-link">experience</a>
+                </li>
+                <li class="nav-item-wrapper">
+                  <div class="sparkle-bg" data-index="projects"></div>
+                  <a href="#projects" class="nav-link">projects</a>
+                </li>
+                <li class="nav-item-wrapper">
+                  <div class="sparkle-bg" data-index="showcase"></div>
+                  <a href="#showcase" class="nav-link">showcase</a>
+                </li>
+                <li class="nav-item-wrapper">
+                  <div class="sparkle-bg" data-index="contact"></div>
+                  <a href="#contact" class="nav-link">contact</a>
+                </li>
             </ul>
         </div>
     </nav>
     <nav id="hamburger-nav">
-        <div class="logo">Mirva Dudhagara</div>
+        <!-- <div class="logo">mirva d.</div> -->
+        <div class="logo-wrapper">
+          <div id="lottie-mobile" class="logo-bg-animation"></div>
+          <div class="logo">mirva d.</div>
+        </div>
         <div class="hamburger-menu">
           <div class="hamburger-icon" onclick="toggleMenu()">
             <span></span>
@@ -28,16 +59,17 @@
             <span></span>
           </div>
           <div class="menu-links">
-            <li><a href="#about" onclick="toggleMenu()">About</a></li>
-            <li><a href="#experience" onclick="toggleMenu()">Experience</a></li>
-            <li><a href="#projects" onclick="toggleMenu()">Projects</a></li>
-            <li><a href="#contact" onclick="toggleMenu()">Contact</a></li>
+            <li><a href="#about" onclick="toggleMenu()">about</a></li>
+            <li><a href="#experience" onclick="toggleMenu()">experience</a></li>
+            <li><a href="#projects" onclick="toggleMenu()">projects</a></li>
+            <li><a href="#showcase" onclick="toggleMenu()">showcase</a></li>
+            <li><a href="#contact" onclick="toggleMenu()">contact</a></li>
           </div>
         </div>
     </nav>
     <section id="profile">
       <div class="section__pic-container">
-        <img src="./assets/profile-pic.jpg" alt="Mirva Dudhagara profile picture" />
+        <img  class="avatar-png" src="./assets/avatar.png" alt="Mirva Dudhagara profile picture" />
       </div>
       <div class="section__text">
         <p class="section__text__p1">Hello, I'm</p>
@@ -263,8 +295,29 @@
         <div class="about-containers">
           <div class="details-container color-container">
             <div class="article-container">
+              <div id="yap-animation" class="project-lottie"></div>
+            </div>
+            <h2 class="experience-sub-title project-title">Yap</h2>
+            <h4 class="skill-sub-title">java | bootstrap | thymeleaf</h4>
+            <div class="btn-container">
+              <button
+                class="btn btn-color-2 project-btn"
+                onclick="location.href='https://github.com/'"
+              >
+                Github
+              </button>
+              <button
+                class="btn btn-color-2 project-btn"
+                onclick="location.href='https://github.com/'"
+              >
+                Live Demo
+              </button>
+            </div>
+          </div>
+          <div class="details-container color-container">
+            <div class="article-container">
               <img
-                src="./assets/project-1.png"
+                src="./assets/qlio-cover-2.png"
                 alt="Project 1"
                 class="project-img"
               />
@@ -339,9 +392,30 @@
         src="./assets/arrow.png"
         alt="Arrow icon"
         class="icon arrow"
-        onclick="location.href='./#contact'"
+        onclick="location.href='./#showcase'"
       />
     </section>
+
+    <section id="showcase">
+      <p class="section__text__p1">View My Creations</p>
+      <h1 class="title">Showcase</h1>
+      <div class="showcase-container">
+        <ul class="showcase-menu">
+          <li onclick="loadPen('pen1')">Retro Card Carousel</li>
+          <li onclick="loadPen('pen2')">Animated Buttons</li>
+        </ul>
+        <div class="embed-area" id="embed-area">
+          <!-- CodePen embed iframe loads here -->
+        </div>
+      </div>
+      <img
+      src="./assets/arrow.png"
+      alt="Arrow icon"
+      class="icon arrow"
+      onclick="location.href='./#contact'"
+    />
+    </section>
+         
 
     <section id="contact">
       <p class="section__text__p1">Get in Touch</p>
@@ -377,9 +451,72 @@
           </ul>
         </div>
       </nav>
-      <p>Copyright &#169; 2023 John Doe. All Rights Reserved.</p>
+      <p>Copyright &#169; 2025 Mirva Dudhagara. All Rights Reserved.</p>
     </footer>
     
     <script src="script.js"></script>
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        lottie.loadAnimation({
+          container: document.getElementById("lottie-desktop"),
+          renderer: "svg",
+          loop: false,
+          autoplay: true,
+          path: "./assets/scribble.json",
+        });
+    
+        lottie.loadAnimation({
+          container: document.getElementById("lottie-mobile"),
+          renderer: "svg",
+          loop: false,
+          autoplay: true,
+          path: "./assets/scribble.json",
+        });
+      });
+    </script>
+
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    const sparklePath = "./assets/sparkle.json";
+    const navItems = document.querySelectorAll(".sparkle-bg");
+
+    navItems.forEach((container) => {
+      const anim = lottie.loadAnimation({
+        container,
+        renderer: "svg",
+        loop: false,
+        autoplay: false,
+        path: sparklePath,
+      });
+
+      const parent = container.closest(".nav-item-wrapper");
+
+      parent.addEventListener("mouseenter", () => {
+        container.style.opacity = "1";
+        anim.stop();
+        anim.play();
+      });
+
+      parent.addEventListener("mouseleave", () => {
+        container.style.opacity = "0";
+      });
+    });
+  });
+</script>
+
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    lottie.loadAnimation({
+      container: document.getElementById("yap-animation"),
+      renderer: "svg",
+      loop: true,
+      autoplay: true,
+      path: "./assets/yap.json" // Ensure path is correct
+    });
+  });
+</script>
+
+
+    
 </body>
 </html>
