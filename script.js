@@ -8,7 +8,9 @@ function toggleMenu() {
 function loadPen(penId) {
     const pens = {
         pen1: "https://codepen.io/Mirva-Dudhagara/embed/dPyEqJK?default-tab=result",
-        pen2: "https://codepen.io/Mirva-Dudhagara/embed/GgRaXab?default-tab=result",
+        pen2: "https://codepen.io/Mirva-Dudhagara/embed/VYwoJEe?default-tab=result",
+        pen3: "https://codepen.io/Mirva-Dudhagara/embed/NPWQZRj?default-tab=result",
+        pen4: "https://codepen.io/Mirva-Dudhagara/embed/GgRaXab?default-tab=result",
     };
     
     const embedUrl = pens[penId];

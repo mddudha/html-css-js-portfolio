@@ -7,6 +7,26 @@
     padding: 0;
 }
 
+#about h1 {
+color: rgb(253, 225, 72);
+}
+
+#experience h1 {
+  color: rgb(253, 225, 72);
+  }
+
+#projects h1{
+    color: rgb(253, 225, 72);
+    }
+
+#showcase h1{
+      color: rgb(253, 225, 72);
+      }
+
+#contact h1 {
+        color: rgb(253, 225, 72);
+        }
+
 body {
     font-family: 'Poppins', sans-serif;
 }
@@ -408,14 +428,14 @@ nav {
   text-align: initial;
   flex-wrap: wrap;
   flex-direction: row;
-  gap: 2.5rem;
-  justify-content: space-around;
+  gap: 1.5rem;
+  /* justify-content: space-around; */
 }
 
 article {
   display: flex;
   width: 10rem;
-  justify-content: space-around;
+  /* justify-content: space-around; */
   gap: 0.5rem;
 }
 
@@ -561,8 +581,70 @@ footer p {
 
 .project-lottie {
   width: 100%;
-  height: 230px;
+  height: 240px;
   display: flex;
   justify-content: center;
   align-items: center;
 }
+
+#projects .title {
+  margin-bottom: 2rem;
+}
+
+
+@media screen and (min-width: 1024px) {
+  .carousel-wrapper {
+    overflow: hidden;
+    width: 100vw;
+    position: relative;
+    margin-left: calc(-1 * ((100vw - 100%) / 2)); /* align full width */
+  }
+
+  .carousel-track {
+    display: flex;
+    animation: pingPong 20s linear infinite alternate;
+
+  }
+
+  .carousel-wrapper:hover .carousel-track {
+    animation-play-state: paused;
+  }
+
+  .project-containers {
+    display: flex;
+    gap: 2rem;
+    padding: 0 10vw; /* adds spacing on both ends */
+  }
+
+  @keyframes pingPong {
+    0% {
+      transform: translateX(0%);
+    }
+    100% {
+      transform: translateX(-50%);
+    }
+  }
+}
+
+/* .title-wrapper {
+  position: relative;
+  display: inline-block;
+  width: fit-content;
+  margin: 0 auto;
+}
+
+.scribble-animation {
+  position: absolute;
+  top: -30px;
+  left: -20px;
+  width: 200px;
+  height: 100px;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.title {
+  position: relative;
+  z-index: 1;
+  text-align: center;
+} */
